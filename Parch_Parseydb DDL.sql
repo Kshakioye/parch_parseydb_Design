@@ -35,3 +35,7 @@ ALTER TABLE web_events ADD FOREIGN KEY (account_id) REFERENCES accounts(id);
 ALTER TABLE sales_reps ALTER COLUMN id SET NOT NULL;
 ALTER TABLE accounts ADD CONSTRAINT unique_id UNIQUE(id);
 ALTER TABLE region ALTER COLUMN id SET NOT NULL;
+ALTER TABLE web_events DROP COLUMN channel;
+ALTER TABLE web_events ADD COLUMN channel VARCHAR;
+ALTER TABLE web_events ADD COLUMN occurred_at TIMESTAMP;
+
